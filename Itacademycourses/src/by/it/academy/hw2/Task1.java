@@ -1,4 +1,4 @@
-package by.it.academy;
+package by.it.academy.hw2;
 
 public class Task1 {
     public static void main(String[] args) {
@@ -18,9 +18,5 @@ public class Task1 {
         System.out.println(d);
         boolean bool = true;
         System.out.println(bool);
-
-
-
-
     }
 }

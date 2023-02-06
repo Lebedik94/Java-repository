@@ -1,4 +1,4 @@
-package by.it.academy;
+package by.it.academy.hw2;
 
 public class Task4 {
     public static void main(String[] args) {
@@ -83,3 +83,4 @@ public class Task4 {
         System.out.println("The char conversion has the following meanings" + "\n" + numberByte + "\n" + numberShort + "\n" + numberInt + "\n" + numberLong + "\n" + numberFloat + "\n" + numberDouble + "\n" + numberChar);
     }
 }
+
