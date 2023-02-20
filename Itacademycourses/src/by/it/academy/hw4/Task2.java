@@ -4,18 +4,26 @@ import java.util.Scanner;
 
 public class Task2 {
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
         System.out.println("Enter number");
-        int num = in.nextInt();
+        Scanner sc = new Scanner(System.in);
+        int digit = sc.nextInt();
+        System.out.println("Сумма ровна: " + sumDigits(digit) + "\nУмножение равно:" + multiplicationDigits(digit));
+    }
+    public static int sumDigits(int digit) {
         int sum = 0;
-        int mul = 1;
-        while (num != 0) {
-            sum += (num % 10);
-            mul *= (num % 10);
-            num /= 10;
+        while (digit != 0) {
+            sum += digit % 10;
+            digit /= 10;
         }
-        System.out.println(sum + " ");
-        System.out.println(mul + "  ");
+        return sum;
+    }
+    public static int multiplicationDigits (int digit) {
+        int multiplication = 1;
+        while (digit != 0) {
+            multiplication *= digit % 10;
+            digit /= 10;
+        }
+        return multiplication;
     }
 }
 
