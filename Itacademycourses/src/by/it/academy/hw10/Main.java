@@ -35,7 +35,7 @@ public class Main {
         System.out.println("---------------------------");
 
         PetShop animal1 = new Cat("Barsik", 20.48, 3);
-        PetShop animal2 = new Cat("VAsja", 40, 1);
+        PetShop animal2 = new Cat("Vasja", 40, 1);
         PetShop animal3 = new Dog("Lucky", 110, 1.5);
         PetShop animal4 = new Dog("Tosha", 90, 2);
         PetShop animal5 = new Horse("Tom", 54.8, 0.6);
@@ -59,7 +59,7 @@ public class Main {
         System.out.println("\nSort by price: " + petShop);
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("\nChoose a pet name from the following: Wasia, Markiz, Oskar, Jim, Luidzi, Gosha");
+        System.out.println("\nChoose a pet name from the following: Barsik, Vasja, Lucky, Tosha, Tom, James");
         String petsName = scanner.next();
 
         purchase(petsName, petShop);
