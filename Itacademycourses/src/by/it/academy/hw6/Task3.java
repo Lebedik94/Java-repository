@@ -5,43 +5,46 @@ public class Task3 {
 
         String text = "Я попытался объяснить, что не рисовал никогда в жизни.";
 
-        String[] wordArray = text.split("\\s*[\\s+\\.,]\\s*");
+        String regex = "\\s*[\\s!\\.,-]\\s*";
+
+        String[] strings = text.split(regex);
+
+        int lengthMax = 0;
+        int lengthMin = strings[0].length();
 
         int indexMax = 0;
         int indexMin = 0;
-        int lengthMax = 0;
-        int lengthMin = wordArray[0].length();
 
+        for (int i = 0; i < strings.length; i++) {
 
-        for (int i = 0; i < wordArray.length; i++) {
-
-            if (lengthMax < wordArray[i].length()) {
-                lengthMax = wordArray[i].length();
+            if (lengthMax < strings[i].length()) {
+                lengthMax = strings[i].length();
                 indexMax = i;
 
             }
-            if (lengthMin >= wordArray[i].length()) {
-                lengthMin = wordArray[i].length();
+            if (lengthMin >= strings[i].length()) {
+                lengthMin = strings[i].length();
                 indexMin = i;
             }
 
         }
 
-        textSubstitution(text, indexMax, indexMin);
+        wordSubstitution (text, indexMax, indexMin);
     }
+    static void wordSubstitution (String text, int indexMax, int indexMin) {
+        String[] strings2 = text.split("\\s*[\\s\\.]\\s*");
 
-    static void textSubstitution(String text, int indexMax, int indexMin) {
+        String s = strings2[indexMax];
+        strings2[indexMax] = strings2[indexMin];
+        strings2[indexMin] = s;
 
-        String[] newArray = text.split("\\s+");
-        StringBuilder textSub = new StringBuilder();
+        StringBuilder stringBuilder = new StringBuilder();
 
-        String wordMemory = newArray[indexMax];
-        newArray[indexMax] = newArray[indexMin];
-        newArray[indexMin] =wordMemory;
-
-        for (String word : newArray) {
-            textSub.append(word).append(" ");
+        for (String word : strings2) {
+            stringBuilder.append(word).append(" ");
         }
-        System.out.println(textSub);
+
+        System.out.println(stringBuilder.insert(stringBuilder.lastIndexOf(" "), "."));
+
     }
 }

@@ -12,22 +12,22 @@ public class Task5 {
         System.out.println(resultTwoString(text));
     }
     static String resultTwoString(String text) {
-        Pattern p = Pattern.compile("(?i)Object-oriented programming");
-        String[] arrayStr = text.split("Object-oriented programming");
-        for(int i = 1; i < arrayStr.length; i++) {
-            arrayStr[i] = "Object-oriented programming" + arrayStr[i];
+        String regex = "Object-oriented programming";
+        Pattern pattern = Pattern.compile(regex);
+        String[] arrayString = text.split(regex);
+        for (int i = 1; i < arrayString.length; i++) {
+            arrayString[i] = regex + arrayString[i];
         }
-        for (int i = 1; i < arrayStr.length; i++) {
-            if (i % 2 == 0) {
-                arrayStr[i] = arrayStr[i].replaceAll(p.pattern(), "OOP");
+        for (int i = 0; i < arrayString.length; i = i + 2) {
+            arrayString[i] = arrayString[i].replaceAll(pattern.pattern(), "OOP");
+            {
             }
         }
-        StringBuilder sb = new StringBuilder();
-        for (String s : arrayStr) {
-            sb.append(s);
+        StringBuilder textBuilder = new StringBuilder();
+        for (String string : arrayString) {
+            textBuilder.append(string);
         }
-        String newText = sb.toString();
-        return newText;
+        return textBuilder.toString();
     }
     }
 
